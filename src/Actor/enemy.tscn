@@ -7,7 +7,7 @@
 extents = Vector2( 22.2754, 19 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22, 4 )
+extents = Vector2( 25, 4 )
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 0, -3 )

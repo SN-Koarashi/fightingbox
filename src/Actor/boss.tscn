@@ -10,47 +10,61 @@
 extents = Vector2( 52.8889, 47.5556 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 34.3704, 1.18518 )
+extents = Vector2( 34.6667, 1.18518 )
 
 [node name="Boss" type="KinematicBody2D"]
-position = Vector2( 0, -69 )
+position = Vector2( 0, -8 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 2 )
+speed = Vector2( 315, 750 )
 
-[node name="player" type="Sprite" parent="."]
-position = Vector2( 0.666667, -33.3333 )
+[node name="boss" type="Sprite" parent="."]
+position = Vector2( -1.19209e-07, -72 )
 scale = Vector2( 1.64236, 1.60417 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="boss" type="Sprite" parent="player"]
-position = Vector2( -0.888885, 0.44445 )
+[node name="boss2" type="Sprite" parent="boss"]
+position = Vector2( -0.00109482, 0.828056 )
 rotation = 0.34383
-scale = Vector2( 0.403087, 0.396331 )
+scale = Vector2( 0.403087, 0.396418 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.33333, -32 )
+position = Vector2( 0, -68.6667 )
 scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 modulate = Color( 0.854902, 0, 0, 1 )
+position = Vector2( 0, -3.8147e-06 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.888889, -71.1111 )
+position = Vector2( 0, -95.5555 )
 scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -2, -30 )
+position = Vector2( -0.666667, -68 )
 scale = Vector2( 0.210937, 0.213542 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="HitSucceed" type="AudioStreamPlayer" parent="."]
+[node name="KillSucceed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = 5.0
 

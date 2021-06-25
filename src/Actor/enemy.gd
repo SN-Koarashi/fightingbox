@@ -2,12 +2,16 @@ extends "res://src/Actor/Actor.gd"
 
 func _ready() -> void:
 	vel.x = -speed.x
+	preload("res://src/global.gd")
 
 func _on_Area2D_body_entered(body: PhysicsBody2D):
 	# Hitbox
 	# hit from top
-	if body.global_position.y+2.0 > get_node("Area2D").global_position.y:
+	if body.global_position.y > get_node("Area2D").global_position.y:
 		return
+	StompSound.play()
+	
+	Globals.eScore += 15
 	get_node("CollisionShape2D").disabled = true
 	queue_free()
 
