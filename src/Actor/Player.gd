@@ -19,7 +19,6 @@ var AFK_counter = 0
 var onWallHIt = "none"
 
 func _ready():
-	preload("res://src/global.gd")
 	get_node("Timer").start(1)
 
 func _physics_process(delta: float) -> void:
